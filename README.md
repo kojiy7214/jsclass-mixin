@@ -6,11 +6,11 @@ Among other mixin libraries, jsclass-mixin focuses on sticking to ES6 class
 defining style, thous archiving high level code readability.
 Code says more than thousand words.
 
-'''
+```
   class Base{constructor(a, b){}};
 
-  class MixA{constructor(a, b)};
-  class MixB{constructor(c, d)};
+  class MixA{constructor(a, b){}};
+  class MixB{constructor(c, d){}};
 
   class MixinSample extends mix(Base, MixA, MixB){
     constructor(a, b, c, d){
@@ -22,7 +22,7 @@ Code says more than thousand words.
       MixB.new(c, d);
     }
   }
-'''
+```
 
 ## How to Use
 Just extend your class using mix function.
@@ -47,7 +47,7 @@ special class for mixin, "jsclass-mixin" accepts any/every ES6 class!
 ## "isMixWith()" Works As "instanceof" alternative
 To check which classes are mixed in, developer can use "isMixWith()" method.
 
-'''
+```
   class MixinSample extends mix(Base, MixA, MixB){
   }
 
@@ -56,4 +56,4 @@ To check which classes are mixed in, developer can use "isMixWith()" method.
   //below codes return true
   mixed.isMixedWith(MixA);
   mixed.isMixedWith(MixB);
-  '''
+```

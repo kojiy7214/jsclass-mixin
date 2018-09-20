@@ -3,7 +3,7 @@ const mix = require('../../jsclass-mixin')
 
 
 describe('Basic mixin test', function() {
-  describe('mix with one class', function() {
+  describe('mix with classes', function() {
     it('#test()', function() {
       class A {
         constructor(arg) {
