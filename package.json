@@ -1,0 +1,26 @@
+{
+  "name": "jsclass-mixin",
+  "version": "0.1.0",
+  "description": "Mixin ES6 based classes made easy & simple.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kojiy7214/jsclass-mixin.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "ES6",
+    "class",
+    "mixin",
+    "mix-in"
+  ],
+  "author": "Koji Yamashita <koji7214@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kojiy7214/jsclass-mixin/issues"
+  },
+  "homepage": "https://github.com/kojiy7214/jsclass-mixin#readme"
+}
