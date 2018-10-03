@@ -28,7 +28,9 @@ describe('Basic mixin test', function() {
         };
       }
 
-      class C extends mix(B, A) {
+      class D {};
+
+      class C extends mix(B, A, D) {
         constructor() {
           super();
           A.new("a");
@@ -43,7 +45,16 @@ describe('Basic mixin test', function() {
       assert.notEqual(c.testB, undefined);
       assert.notEqual(c.a2, undefined);
       assert.notEqual(c.isMixedWith, undefined);
+      assert.equal(c.isMixedWith(B), false);
+      assert.equal(c instanceof B, true);
       assert.equal(c.isMixedWith(A), true);
+      assert.equal(c instanceof A, true);
+      assert.equal(c.isMixedWith(D), true);
+      assert.equal(c instanceof D, true);
+
+      let a = new A();
+      assert.equal(a instanceof A, true);
+
     })
   })
 })

@@ -44,8 +44,8 @@ classes.
 Developer can use any class as mixin class.  Developers does not need to design
 special class for mixin, "jsclass-mixin" accepts any/every ES6 class!
 
-## "isMixWith()" Works As "instanceof" alternative
-To check which classes are mixed in, developer can use "isMixWith()" method.
+## "instanceof" Works (update@0.1.2)
+Mixed classes can now test with normal instanceof method.
 
 ```
   class MixinSample extends mix(Base, MixA, MixB){
@@ -54,6 +54,7 @@ To check which classes are mixed in, developer can use "isMixWith()" method.
   let mixed = new MixinSample();
 
   //below codes return true
-  mixed.isMixedWith(MixA);
-  mixed.isMixedWith(MixB);
+  mixed instanceof Base;
+  mixed instanceof MixA;
+  mixed instanceof MixB;
 ```

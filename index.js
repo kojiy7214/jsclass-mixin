@@ -10,7 +10,6 @@ module.exports = function(base, ...mixins) {
   };
 
   let retval = class VirtualBase extends base {
-
     constructor(...args) {
       super(...args);
 
@@ -27,6 +26,10 @@ module.exports = function(base, ...mixins) {
 
         let p = new Proxy(mixins[i], handler);
         mixins[i].new = p;
+
+        Object.defineProperty(mixins[i], Symbol.hasInstance, {
+          value: (o) => o instanceof VirtualBase || mixins[i].prototype.isPrototypeOf(o)
+        });
       }
 
       this.isMixedWith = (cl) => mixins.reduce(
