@@ -45,7 +45,7 @@ Developer can use any class as mixin class.  Developers does not need to design
 special class for mixin, "jsclass-mixin" accepts any/every ES6 class!
 
 ## "instanceof" Works (update@0.1.2)
-Mixed classes can now test with normal instanceof method.
+Mixed classes can now test with normal instanceof operator.
 
 ```
   class MixinSample extends mix(Base, MixA, MixB){
