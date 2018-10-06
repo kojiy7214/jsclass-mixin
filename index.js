@@ -27,9 +27,19 @@ module.exports = function(base, ...mixins) {
         let p = new Proxy(mixins[i], handler);
         mixins[i].new = p;
 
-        Object.defineProperty(mixins[i], Symbol.hasInstance, {
-          value: (o) => o instanceof VirtualBase || mixins[i].prototype.isPrototypeOf(o)
-        });
+
+        let desc = Object.getOwnPropertyDescriptor(mixins[i], Symbol.hasInstance);
+
+        if (!desc || desc.writable) {
+          let test = new mixins[i]();
+
+          let original_instanceof = mixins[i][Symbol.hasInstance];
+
+          Object.defineProperty(mixins[i], Symbol.hasInstance, {
+            value: (o) => original_instanceof(o) || o instanceof VirtualBase || mixins[i].prototype.isPrototypeOf(o),
+            writable: true
+          });
+        }
       }
 
       this.isMixedWith = (cl) => mixins.reduce(
