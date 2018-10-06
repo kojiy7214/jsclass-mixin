@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kojiy7214/jsclass-mixin.svg?branch=master)](https://travis-ci.org/kojiy7214/jsclass-mixin)
+
 # jsclass-mixin
 Mixin JavaScript ES6 based classes made easy &amp; simple.
 
