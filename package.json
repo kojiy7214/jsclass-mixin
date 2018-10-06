@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/kojiy7214/jsclass-mixin/issues"
   },
-  "homepage": "https://github.com/kojiy7214/jsclass-mixin#readme"
+  "homepage": "https://github.com/kojiy7214/jsclass-mixin#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
 }
