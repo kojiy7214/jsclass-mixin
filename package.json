@@ -1,6 +1,6 @@
 {
   "name": "jsclass-mixin",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Mixin ES6 based classes made easy & simple.",
   "main": "index.js",
   "scripts": {
