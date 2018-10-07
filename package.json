@@ -15,7 +15,7 @@
     "ES6",
     "class",
     "mixin",
-    "mix-in"
+    "instanceof"
   ],
   "author": "Koji Yamashita <koji7214@gmail.com>",
   "license": "MIT",
