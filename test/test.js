@@ -11,7 +11,7 @@ describe('Basic mixin test', function() {
         constructor(arg) {
           this.a1 = arg;
           this.a2 = function() {
-            "I am constructor defined function!"
+            console.log("I am constructor defined function!" + this.a1);
           };
         }
 
@@ -36,6 +36,9 @@ describe('Basic mixin test', function() {
         constructor() {
           super();
           A.new("a");
+          this.a2 = function() {
+            console.log("over ridden!" + this.a1);
+          }
         }
       }
 
@@ -76,6 +79,9 @@ describe('Basic mixin test', function() {
 
       let a = new A();
       assert.equal(a instanceof A, true);
+
+      c.a2();
+      c.mixed.a2();
 
     })
   })

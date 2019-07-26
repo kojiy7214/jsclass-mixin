@@ -9,10 +9,20 @@ defining style, thous archiving high level code readability.
 Code says more than thousand words.
 
 ```
-  class Base{constructor(a, b){}};
+  class Base{
+    constructor(a, b){};
+  };
 
-  class MixA{constructor(a, b){}};
-  class MixB{constructor(c, d){}};
+  class MixA{
+    constructor(a, b){};
+    hello(){
+      console.log("I am MixA");
+    }
+  };
+
+  class MixB{
+    constructor(c, d){}};
+  };
 
   class MixinSample extends mix(Base, MixA, MixB){
     constructor(a, b, c, d){
@@ -22,7 +32,7 @@ Code says more than thousand words.
       //calling Mixin classes' constructor
       MixA.new(a, b);
       MixB.new(c, d);
-    }
+    };
   }
 ```
 
@@ -46,17 +56,39 @@ classes.
 Developer can use any class as mixin class.  Developers does not need to design
 special class for mixin, "jsclass-mixin" accepts any/every ES6 class!
 
-## "instanceof" Works (update@0.1.2)
+## "instanceof" Works
 Mixed classes can now test with normal instanceof operator.
 
 ```
   class MixinSample extends mix(Base, MixA, MixB){
   }
 
-  let mixed = new MixinSample();
+  let obj = new MixinSample();
 
   //below codes return true
-  mixed instanceof Base;
-  mixed instanceof MixA;
-  mixed instanceof MixB;
+  obj instanceof Base;
+  obj instanceof MixA;
+  obj instanceof MixB;
+```
+
+## "super" Alternative for Mixed Class (update@0.1.6)
+While it is not possible to access mixed classes over-ridden methods using super
+key word, jsclass-mixin provides alternative way to it.
+You can use mixed property to access mixed classes overriden method.
+
+```
+  class MixinSample extends mix(Base, MixA, MixB){
+    hello(){
+      console.log("I am MixinSample");
+    }
+  }
+
+  let obj = new MixinSample();
+
+  obj.hello();
+  > I am MixinSample
+
+  //access over-ridden method this way
+  obj.mixed.hello();
+  > I am MixA
 ```

@@ -1,6 +1,6 @@
 {
   "name": "jsclass-mixin",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Mixin ES6 based classes made easy & simple.",
   "main": "index.js",
   "scripts": {
@@ -25,5 +25,8 @@
   "homepage": "https://github.com/kojiy7214/jsclass-mixin#readme",
   "devDependencies": {
     "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "jsclass-logger": "^0.1.7"
   }
 }
